@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  energy-tracker:
+    build: ./backend
+    container_name: energy-tracker
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=Europe/Berlin   # change to your server's timezone
+      - PORT=3000

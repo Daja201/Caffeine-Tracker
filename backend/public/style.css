@@ -1,0 +1,180 @@
+* { box-sizing: border-box; }
+
+html, body {
+  background: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 15px;
+}
+
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px 14px 60px 14px;
+}
+
+#stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+select, input, button {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 0;
+}
+
+select#rangeSelect {
+  flex-shrink: 0;
+}
+
+#statLine {
+  flex-grow: 1;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#addForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+#presetRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.preset {
+  border: 1px solid #fff;
+  padding: 6px 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.preset.active {
+  background: #fff;
+  color: #000;
+}
+
+.presetAddBtn {
+  border: 1px dashed #777;
+  color: #777;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.row2 {
+  display: flex;
+  gap: 8px;
+}
+
+.row2 input {
+  flex: 1;
+  width: 0;
+}
+
+input {
+  width: 100%;
+}
+
+.justLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #333;
+  padding: 8px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  background: #fff;
+  color: #000;
+}
+
+#list {
+  display: flex;
+  flex-direction: column;
+}
+
+.entry {
+  border-bottom: 1px solid #222;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.entry .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.entry .idx {
+  color: #777;
+  font-size: 12px;
+}
+
+.entry .right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.entry .j {
+  font-size: 12px;
+  color: #777;
+}
+
+.unit {
+  font-size: 11px;
+  color: #777;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.dialog {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid #fff;
+  padding: 16px;
+}
+
+.dialogRow {
+  display: flex;
+  gap: 8px;
+}
+
+.dialogRow button {
+  flex: 1;
+}

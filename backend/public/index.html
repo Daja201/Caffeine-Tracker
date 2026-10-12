@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>energy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <div id="stats">
+    <select id="rangeSelect">
+      <option value="today">today</option>
+      <option value="week">week</option>
+      <option value="month" selected>month</option>
+      <option value="year">year</option>
+      <option value="all">all</option>
+    </select>
+    <div id="statLine">— mg · — g · —</div>
+  </div>
+
+  <form id="addForm">
+    <div id="presetRow"></div>
+
+    <input type="text" id="f_name" placeholder="name" required>
+    <div class="row2">
+      <input type="number" step="any" id="f_sugar" placeholder="sugar g/100ml" required>
+      <input type="number" step="any" id="f_caffeine" placeholder="caffeine mg/100ml" required>
+    </div>
+    <div class="row2">
+      <input type="number" step="any" id="f_size" placeholder="size ml" required>
+      <input type="number" step="any" id="f_price" placeholder="price per can" required>
+    </div>
+    <label class="justLabel">
+      <span>justified</span>
+      <input type="checkbox" id="f_justified">
+    </label>
+    <button type="submit">log</button>
+  </form>
+
+  <div id="list"></div>
+
+</div>
+
+<div id="editOverlay" class="overlay hidden">
+  <div class="dialog">
+    <input type="text" id="e_name" placeholder="name">
+    <div class="row2">
+      <input type="number" step="any" id="e_sugar" placeholder="sugar g/100ml">
+      <input type="number" step="any" id="e_caffeine" placeholder="caffeine mg/100ml">
+    </div>
+    <div class="row2">
+      <input type="number" step="any" id="e_size" placeholder="size ml">
+      <input type="number" step="any" id="e_price" placeholder="price per can">
+    </div>
+    <input type="date" id="e_day">
+    <label class="justLabel">
+      <span>justified</span>
+      <input type="checkbox" id="e_justified">
+    </label>
+    <div class="dialogRow">
+      <button id="e_save">save</button>
+      <button id="e_delete">delete</button>
+      <button id="e_cancel">cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="confirmOverlay" class="overlay hidden">
+  <div class="dialog">
+    <div>delete this entry?</div>
+    <div class="dialogRow">
+      <button id="c_yes">yes</button>
+      <button id="c_no">no</button>
+    </div>
+  </div>
+</div>
+
+<div id="presetEditOverlay" class="overlay hidden">
+  <div class="dialog">
+    <input type="text" id="p_name" placeholder="name">
+    <div class="row2">
+      <input type="number" step="any" id="p_sugar" placeholder="sugar g/100ml">
+      <input type="number" step="any" id="p_caffeine" placeholder="caffeine mg/100ml">
+    </div>
+    <input type="number" step="any" id="p_size" placeholder="size ml">
+    <div class="dialogRow">
+      <button id="p_save">save</button>
+      <button id="p_delete">delete</button>
+      <button id="p_cancel">cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
